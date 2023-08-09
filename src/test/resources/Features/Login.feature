@@ -4,7 +4,6 @@ Feature: User Login
  Scenario: Launch the browser
     Given open chrome and launch the application
 
-
   Scenario: Login with valid credentials
     Given User navigates to Login page
     When User enters valid email address "standard_user"
@@ -12,6 +11,23 @@ Feature: User Login
     And Click on Login button
     Then User should login successfully
 
+    Scenario: Title on the Product Screen
+      Then Swag labs Title is visible on the product screen
+
+  Scenario: Add to Cart
+  When User click on Add to Cart button
+  Then Product is added in cart successfully
+
+  Scenario: Cart count
+  Then the cart icon displays the correct number of items added to the cart
+
+  Scenario: Checkout functionality
+  When User click on Checkout Button
+  Then User will be redirected to Checkout Page
+
+  Scenario: Logout
+  When User click on Logout Button
+  Then User will be logged out successfully
 #  Scenario: Login with Invalid credentials
 #    Given User navigates to Login page
 #    When User enters invalid email address "jhsdhs@gmail.com"
@@ -38,5 +54,4 @@ Feature: User Login
 #    When User dont enter any credentials
 #    And Click on Login button
 #    Then User should get a proper warning message
-#
-#
+
